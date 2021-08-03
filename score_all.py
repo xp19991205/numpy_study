@@ -44,3 +44,6 @@ print(df3)
 # df2 = pd.read_excel('./score_all/1.xls',index_col= 0,sheet_name=1)
 # print(df1)
 # print(df1[:,2])
+#直接给出数据的一些统计特征
+#均值 mean 标准差std 最小值min 百分位数 max最大值
+print(df3.describe())
