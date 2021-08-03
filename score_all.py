@@ -27,6 +27,8 @@ df1 = df.drop_duplicates(subset=None, keep='first', inplace=False)
 #subset是根据字段去除重复，多个字段就写成列表形式，默认是所有列
 #keep first就是保留第一个，last就是最后
 #inplace 默认为False，不直接进行修改
+df1 = df1.dropna(axis=0,how='all')
+#这里做了一个数据的缺失值处理，这里删除了那些一行都是NAN的值
 print(df1)
 df2 = df1.sort_values("智育成绩",inplace=False,ascending= False)
 #这里的inplace是对下面的操作进行选择，False原Dataframe不变，如果True原Dataframe发生改变
@@ -49,9 +51,11 @@ print(df3)
 #直接给出数据的一些统计特征
 #均值 mean 标准差std 最小值min 百分位数 max最大值
 print(df3.describe())
-print(df.loc[(df['智育成绩'] > 90)&df['综合排序'] <5])#这里做的一个数据的筛选
-print(df.iloc[[0,1],:]) #按行号列号进行求解
-print(df.iloc[:,[0,1]]) #按行号列号进行求解
+print('data_filtered')
+print(df3.loc[((df3['智育成绩'] > 90) & (df3['综合排序'] <5))])#这里做的一个d多条件数据的筛选
+print(df3.loc[df3['智育成绩'] > 90]) #这里做一个单条件的筛选
+# print(df3.iloc[[0,1],:]) #按行号列号进行求解
+# print(df3.iloc[:,[0,1]]) #按行号列号进行求解
 #查看数据缺失情况，做出对应的调整
 # print(df3.info())
 # df3.dropna(axis=0,how='all')
