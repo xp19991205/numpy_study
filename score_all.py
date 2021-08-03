@@ -49,7 +49,7 @@ print(df3)
 #直接给出数据的一些统计特征
 #均值 mean 标准差std 最小值min 百分位数 max最大值
 print(df3.describe())
-print(df.loc[df['智育成绩'] > 90])#这里做的一个数据的筛选
+print(df.loc[(df['智育成绩'] > 90)&df['综合排序'] <5])#这里做的一个数据的筛选
 print(df.iloc[[0,1],:]) #按行号列号进行求解
 print(df.iloc[:,[0,1]]) #按行号列号进行求解
 #查看数据缺失情况，做出对应的调整
