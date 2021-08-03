@@ -59,3 +59,4 @@ print(df3.loc[df3['智育成绩'] > 90]) #这里做一个单条件的筛选
 #查看数据缺失情况，做出对应的调整
 # print(df3.info())
 # df3.dropna(axis=0,how='all')
+#pandas计算均值等的时候，可以自动忽略NAN，比numpy方便的多
