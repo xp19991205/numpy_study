@@ -85,3 +85,12 @@ film_score = [100,90,100,80,70]
 plt.barh(film_name,film_score,color = 'orange',height= 0.5)
 plt.show()
 
+film_score_1 = [90,80,90,70,60]
+film_score_2 = film_score
+film_score_3 = [110,100,110,90,80]
+
+plt.bar(np.linspace(0,5,5),film_score_1,width= 0.2) #第一个参数大间隔，【1 2 3 4 5】
+plt.bar(np.linspace(0,5,5)+0.2,film_score_2,width = 0.2) #对应的大间隔+宽度
+plt.bar(np.linspace(0,5,5)+0.2*2,film_score_3,width= 0.2) #对应的大间隔+2*宽度
+plt.xticks(np.linspace(0,5,5)+0.2,film_name) #在中间显示轴的名称
+plt.show()
