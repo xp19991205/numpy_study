@@ -43,7 +43,10 @@ plt.legend(['sin(x)','cos(x)'])
 plt.title("三角函数曲线")
 plt.xlabel('自变量x')
 plt.ylabel("函数值")
+#绘制网址
+plt.grid(alpha = 0.8) #对应xticks的点数 alpha 对应这些网格的透明度
 plt.show()
+
 # #第二种方式
 # lines = plt.plot(t, np.cos(t), t, np.sin(t))
 # # use keyword args
