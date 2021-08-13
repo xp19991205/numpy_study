@@ -94,3 +94,27 @@ plt.bar(np.linspace(0,5,5)+0.2,film_score_2,width = 0.2) #对应的大间隔+宽
 plt.bar(np.linspace(0,5,5)+0.2*2,film_score_3,width= 0.2) #对应的大间隔+2*宽度
 plt.xticks(np.linspace(0,5,5)+0.2,film_name) #在中间显示轴的名称
 plt.show()
+
+
+figure = plt.figure(figsize= (30,30),dpi=30)
+x = np.linspace(0,2*np.pi,100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+Y = np.array([y1,y2]).transpose()#Y:100*2 x:100*1
+plt.plot(x,Y)
+plt.show()
+#上面的这段代码只用了一个X，多个Y拼成列的方式来进行
+
+
+fig, ax = plt.subplots(2, 1)
+x = np.linspace(0,2*np.pi,1000)
+y1 = np.sin(x)
+y2 = np.cos(x)
+ax[0].plot(x,y1,color= 'red')
+ax[0].set_title("正弦曲线")
+ax[1].plot(x,y1,color= 'blue')
+ax[1].grid()
+ax[1].set_title("余弦曲线")
+plt.subplots_adjust(hspace=1, wspace=1) #这个函数用来调整子图高之间的间距，宽之间的间距
+plt.show()
+#上面介绍了子图的一些绘制方法
